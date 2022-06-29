@@ -31,4 +31,10 @@ public class BlogController {
         blogReposotyr.save(blog);
         return ResponseEntity.status(201).body(new API("blog add !",201));
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<API> deleteBlog(@PathVariable Integer id){
+        blogReposotyr.deleteById(id);
+        return ResponseEntity.status(201).body(new API("Blog deleted !",201));
+    }
 }
